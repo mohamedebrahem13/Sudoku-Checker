@@ -100,12 +100,11 @@ fun isValidSudoku(board: Array<CharArray>): Boolean {
 
 
 fun areRowsEqualLength(board: Array<CharArray>, rows: Int): Boolean {
-    if (rows > 0) {
-        val cols = board[0].size
-        for (r in 1..<rows) {
-            if (board[r].size != cols) {
-                return false // Uneven row sizes
-            }
+    if (rows <= 0) return false
+    val cols = board[0].size
+    for (r in 1..<rows) {
+        if (board[r].size != cols) {
+            return false // Uneven row sizes
         }
     }
     return true
